@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app_flutter/pages/welcome_page.dart';
+import 'package:travel_app_flutter/pages/navpages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: const WelcomePage(),
+      home: MainPage(),
     );
   }
 }
