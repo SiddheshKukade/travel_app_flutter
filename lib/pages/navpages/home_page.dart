@@ -12,6 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  var images = {
+    "balloning.png": "Balloning",
+    "hiking.png": "Hiking",
+    "kayaking.png": "Kayaking",
+    "snorkling.png": "Snorkling",
+  };
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(
@@ -45,7 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ), // for navbar
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
             margin: const EdgeInsets.only(left: 20),
@@ -117,6 +123,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppLargeText(
                   text: "Explore More",
@@ -127,6 +134,48 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   color: AppColors.textColor1,
                 )
               ],
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 20),
+            width: double.maxFinite,
+            height: 120,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              itemBuilder: ((_, index) {
+                return Container(
+                  margin: const EdgeInsets.only(right: 20),
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "img/" + images.keys.elementAt(index)),
+                              fit: BoxFit.cover),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        child: AppText(
+                          text: images.values.elementAt(index),
+                          color: AppColors.textColor2,
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }),
             ),
           )
         ],
