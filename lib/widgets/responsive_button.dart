@@ -32,7 +32,7 @@ class ResponsiveButton extends StatelessWidget {
               width: 5,
             ),
             AppText(
-              text: text!,
+              text: text,
               color: Colors.white,
             ),
             Image.asset("img/button-one.png")
