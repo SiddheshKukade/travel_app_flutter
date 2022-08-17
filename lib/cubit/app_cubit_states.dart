@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:travel_app_flutter/model/data_model.dart';
 
 abstract class CubitStates extends Equatable {}
 
@@ -22,7 +23,19 @@ class LoadingState extends CubitStates {
 }
 
 class LoadedState extends CubitStates {
+  final List<DataModel> places;
+  //catch the data that we have received
+  LoadedState(this.places);
   // responsible for showing the UI Data
   @override
-  List<Object> get props => [];
+  List<Object> get props => [places];
+}
+
+class DetailState extends CubitStates {
+  final DataModel place;
+//catch the data that we have received
+  DetailState(this.place);
+// responsible for showing the UI Data
+  @override
+  List<Object> get props => [place];
 }
