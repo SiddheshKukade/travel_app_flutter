@@ -205,7 +205,8 @@ class _DetailPageState extends State<DetailPage> {
                       width: 30,
                     ),
                     ResponsiveButton(
-                      isResponsive: false,
+                      text: "Book Trip Now",
+                      isResponsive: true,
                     )
                   ],
                 ))
