@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app_flutter/pages/navpages/detail_page.dart';
+import 'package:travel_app_flutter/cubit/app_cubit.dart';
+import 'package:travel_app_flutter/cubit/app_cubit_logics.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +21,10 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: DetailPage(),
+      home: BlocProvider<AppCubits>(
+        create: (context) => AppCubits(),
+        child: AppCubitLogics(),
+      ),
     );
   }
 }
