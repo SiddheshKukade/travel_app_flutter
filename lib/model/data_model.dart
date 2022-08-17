@@ -4,24 +4,26 @@ class DataModel {
   final String img;
   final int price;
   final int people;
-  final int starts;
+  final int stars;
   final String description;
   final String location;
   DataModel(
       {required this.img,
       required this.price,
       required this.people,
-      required this.starts,
       required this.description,
       required this.location,
-      required this.name});
+      required this.name,
+      required this.stars});
 
   factory DataModel.fromJson(Map<String, dynamic> json) {
+    print("json received");
+    print(json);
     return DataModel(
         img: json["img"],
         price: json["price"],
         people: json["people"],
-        starts: json["starts"],
+        stars: json["stars"],
         description: json["description"],
         location: json["location"],
         name: json["name"]);
